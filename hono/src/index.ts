@@ -1,13 +1,13 @@
 import { Hono } from 'hono'
 import type {User} from '../../types/user'
 
-const app = new Hono()
+const app = new Hono().basePath("/api")
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
-app.get('/api/hello', (c) => {
+app.get('/hello', (c) => {
   return c.json({
     ok: true,
     message: 'Hello Hono!',
