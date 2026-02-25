@@ -15,7 +15,7 @@ app.get('/api/hello', (c) => {
 })
 
 app.notFound((c) => {
-  return c.text('Custom 404 Message', 404)
+  return c.text('404 not found', 404)
 })
 
 export default app
