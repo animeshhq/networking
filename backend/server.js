@@ -1,11 +1,15 @@
 import express from "express";
 
 const app = express();
-const port = 8080;
+const port = 3000;
+
+app.use((req, res, next) => {
+  console.log(req.method, req.url);
+});
 
 app.get("/", (req, res) => {
-    res.sendStatus(201)
-  console.log(req.method)
+  res.send("Hello world");
+  console.log(req.method);
 });
 
 app.listen(port, () => {
